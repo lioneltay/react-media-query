@@ -1,0 +1,63 @@
+{
+  "name": "@tekktekk/react-media-query",
+  "version": "0.0.4",
+  "description": "Responsive Media Queries for React",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "homepage": "https://github.com/lioneltay/react-media-query.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lioneltay/react-media-query.git"
+  },
+  "author": {
+    "email": "lionel.lt.tay@gmail.com",
+    "name": "Lionel Tay",
+    "url": "https://github.com/lioneltay"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "media",
+    "query",
+    "media query",
+    "responsive"
+  ],
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build:docs": "cd ./documentation && npm run build && cd .. && npm run typedocs",
+    "update:docs": "npm run build:docs && git add . && git commit -m \"Update Documenation\" && git push origin master",
+    "typedocs": "npx typedoc --out ./docs/typedocs ./src/index.ts",
+    "preversion": "npm run test && npm run lint",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test && npm run lint",
+    "version": "npm run format && git add -A",
+    "postversion": "git push && git push --tags",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3",
+    "react": "16.7.0-alpha.2",
+    "react-dom": "16.7.0-alpha.2",
+    "react-testing-library": "^5.4.4",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typedoc": "^0.14.0",
+    "typescript": "^3.2.2"
+  },
+  "peerDependencies": {
+    "react": ">= 16.3.0",
+    "react-dom": ">= 16.3.0"
+  }
+}
