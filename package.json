@@ -1,6 +1,6 @@
 {
   "name": "@tekktekk/react-media-query",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Responsive Media Queries for React",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
